@@ -17,7 +17,7 @@ define osx_recovery_message(
       warning('Cannot set an OS X recovery message without a value')
     }
   } else {
-    property_list_key { 'Remove OS X Recovery Message'
+    property_list_key { 'Remove OS X Recovery Message':
       ensure => absent,
       path   => '/Library/Preferences/com.apple.loginwindow.plist',
       key    => 'LoginwindowText'
