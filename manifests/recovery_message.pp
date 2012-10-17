@@ -14,7 +14,7 @@ define osx::recovery_message(
         value  => $value
       }
     } else {
-      warning('Cannot set an OS X recovery message without a value')
+      fail('Cannot set an OS X recovery message without a value')
     }
   } else {
     property_list_key { 'Remove OS X Recovery Message':
