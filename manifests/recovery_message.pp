@@ -1,9 +1,6 @@
 define osx::recovery_message(
   $ensure = 'present',
-  $domain = undef,
-  $key    = undef,
-  $value  = undef,
-  $user   = undef,
+  $value  = $name,
 ) {
   if $ensure == 'present' {
     if $value != undef {
