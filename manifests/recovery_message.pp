@@ -1,4 +1,4 @@
-define osx_recovery_message(
+define osx::recovery_message(
   $ensure = 'present',
   $domain = undef,
   $key    = undef,
