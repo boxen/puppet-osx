@@ -1,3 +1,8 @@
+# Public: Add a recovery message to the OS X Lock Screen
+#
+# Examples
+#
+#   osx::recovery_message('If this Mac is found, please call 123-123-1234')
 define osx::recovery_message(
   $ensure = 'present',
   $value  = $name,
