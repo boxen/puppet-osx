@@ -1,2 +1,4 @@
-.tmp/
-modules/
+/.bundle/
+/bin/
+/spec/fixtures/.tmp/*
+/spec/fixtures/vendor/*
