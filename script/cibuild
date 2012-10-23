@@ -1,0 +1,3 @@
+#!/bin/sh
+
+script/bootstrap --no-quiet && script/syntax && script/specs && script/lint
