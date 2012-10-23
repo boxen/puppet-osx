@@ -1,0 +1,8 @@
+GITHUBTARBALL
+  remote: glarizza/puppet-property_list_key
+  specs:
+    property_list_key (0.1.0)
+
+DEPENDENCIES
+  property_list_key (= 0.1.0)
+
