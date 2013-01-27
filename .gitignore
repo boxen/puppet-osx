@@ -2,3 +2,4 @@
 /bin/
 /spec/fixtures/.tmp/*
 /spec/fixtures/vendor/*
+/spec/fixtures/modules/property_list_key
