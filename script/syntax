@@ -1,0 +1,37 @@
+#!/bin/sh
+# syntax check puppet and ruby
+
+[ ! -f bin/puppet ] && {
+  script/bootstrap
+}
+
+puppets=`find manifests -name '*.pp' -print 2>/dev/null`
+rubies=`find lib spec -name '*.rb' -not -path 'spec/fixtures/*' -print 2>/dev/null`
+templates=`find templates -type f -print 2>/dev/null`
+
+echo "Syntax"
+echo "------"
+
+for puppet in $puppets; do
+  /bin/echo -n "${puppet}: "
+  bin/puppet parser validate $puppet && echo "Syntax OK"
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+done
+
+for ruby in $rubies; do
+  /bin/echo -n "${ruby}: "
+  ruby -wc $ruby
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+done
+
+for template in $templates; do
+  /bin/echo -n "${template}: "
+  erb -P -x -T '-' ${template} | ruby -wc
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+done
