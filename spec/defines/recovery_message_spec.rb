@@ -11,4 +11,15 @@ describe 'osx::recovery_message' do
       :value  => title
     )}
   end
+
+  context 'with ensure => absent' do
+    let(:title) { 'foo' }
+    let(:params) { {:ensure => 'absent'} }
+
+    it { should contain_property_list_key('Remove OS X Recovery Message').with(
+      :ensure => 'absent',
+      :path   => '/Library/Preferences/com.apple.loginwindow.plist',
+      :key    => 'LoginwindowText',
+    )}
+  end
 end
