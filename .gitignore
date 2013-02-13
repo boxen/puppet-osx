@@ -1,6 +1,7 @@
-/.bundle/
-/bin/
-/spec/fixtures/.tmp/
-/spec/fixtures/.librarian/
-/spec/fixtures/vendor/
-/spec/fixtures/modules/property_list_key/
+/.bundle
+/.ruby-version
+/spec/fixtures/.librarian
+/spec/fixtures/.tmp
+/spec/fixtures/Puppetfile.lock
+/spec/fixtures/modules
+/spec/fixtures/vendor

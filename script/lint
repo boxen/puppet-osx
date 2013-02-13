@@ -1,15 +1,1 @@
-#!/bin/sh
-
-[ ! -f bin/puppet-lint ] && {
-  script/bootstrap
-}
-
-echo
-echo "puppet-lint"
-echo "-----------"
-
-bin/puppet-lint --fail-on-warnings --with-filename manifests
-
-[ $? -eq 0 ] && {
-  echo "ALL OK"
-}
+cardboard-exec
