@@ -1,3 +1,3 @@
 source "https://rubygems.org"
 
-gem "cardboard", "~> 0.2"
+gem "cardboard", "~> 1.0"

@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.3.2)
     ansi (1.4.3)
-    boxen (0.8.1)
+    boxen (1.0.0)
       ansi (~> 1.4)
       hiera (~> 1.0.0)
       highline (~> 1.6)
@@ -11,8 +11,8 @@ GEM
       librarian-puppet (~> 0.9)
       octokit (~> 1.15)
       puppet (~> 3.0)
-    cardboard (0.2.0)
-      boxen (~> 0.8)
+    cardboard (1.0.0)
+      boxen (~> 1.0)
       puppet-lint (~> 0.3)
       puppetlabs_spec_helper (~> 0.4)
       rspec-puppet (~> 0.1)
@@ -27,9 +27,8 @@ GEM
     highline (1.6.15)
     json (1.7.7)
     json_pure (1.7.7)
-    librarian-puppet (0.9.7)
+    librarian-puppet (0.9.8)
       json
-      puppet
       thor (~> 0.15)
     metaclass (0.0.1)
     mocha (0.13.2)
@@ -70,4 +69,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cardboard (~> 0.2)
+  cardboard (~> 1.0)
