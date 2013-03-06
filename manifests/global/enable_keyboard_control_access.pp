@@ -5,7 +5,7 @@ class osx::global::enable_keyboard_control_access {
     domain => 'NSGlobalDomain',
     key    => 'AppleKeyboardUIMode',
     value  => 3,
-    user   => $::luser;
+    user   => $::boxen_user;
   }
 }
 
