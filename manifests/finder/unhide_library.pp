@@ -1,4 +1,4 @@
-
+# Public: Unhide ~/Library in Finder.
 class osx::finder::unhide_library {
   $home = "/Users/$::boxen_user"
 

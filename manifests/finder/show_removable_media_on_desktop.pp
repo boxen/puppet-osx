@@ -1,4 +1,4 @@
-
+# Public: Show removable media on the desktop.
 class osx::finder::show_removable_media_on_desktop {
   include osx::finder
 

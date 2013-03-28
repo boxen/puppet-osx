@@ -1,4 +1,4 @@
-
+# Public: Use Secure Empty Trash by default.
 class osx::finder::empty_trash_securely {
   include osx::finder
 
