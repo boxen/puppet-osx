@@ -6,7 +6,7 @@ class osx::finder::empty_trash_securely {
     user   => $::boxen_user,
     key    => 'EmptyTrashSecurely',
     domain => 'com.apple.finder',
-    value  => 'true',
+    value  => true,
     notify => Exec['killall Finder'];
   }
 }
