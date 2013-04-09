@@ -1,8 +1,14 @@
 GITHUBTARBALL
+  remote: boxen/puppet-boxen
+  specs:
+    boxen (2.0.0)
+
+GITHUBTARBALL
   remote: glarizza/puppet-property_list_key
   specs:
     property_list_key (0.1.0)
 
 DEPENDENCIES
+  boxen (= 2.0.0)
   property_list_key (= 0.1.0)
 
