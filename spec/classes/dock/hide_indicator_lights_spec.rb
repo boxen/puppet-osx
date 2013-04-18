@@ -6,7 +6,7 @@ describe 'osx::dock::hide_indicator_lights' do
   it do
     should include_class('osx::dock')
 
-    should contain_boxen__osx_defaults("Don't show lights under running applications").with({
+    should contain_boxen__osx_defaults("Hide indicator lights under running applications").with({
       :key    => 'show-process-indicators',
       :domain => 'com.apple.dock',
       :value  => false,
