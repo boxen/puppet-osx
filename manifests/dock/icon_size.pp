@@ -5,6 +5,7 @@ class osx::dock::icon_size($size = 36) {
   boxen::osx_defaults { 'icon size':
     domain => 'com.apple.dock',
     key    => 'tilesize',
+    type   => 'int',
     value  => $size,
     user   => $::boxen_user,
     notify => Exec['killall Dock'];
