@@ -1,5 +1,7 @@
 # OSX Defaults Module for Puppet
 
+[![Build Status](https://travis-ci.org/boxen/puppet-osx.png?branch=master)](https://travis-ci.org/boxen/puppet-osx)
+
 Provides classes for setting various defaults in Mac OS X. Also provides a means
 to set a "recovery message" to be displayed on the login and lock screens.
 
