@@ -37,7 +37,7 @@ Just `include` any of these in your manifest.
 
 ### Finder Settings
 
-* `osx::finder::show_external_drives_on_desktop`
+* `osx::finder::show_external_hard_drives_on_desktop`
 * `osx::finder::show_hard_drives_on_desktop`
 * `osx::finder::show_mounted_servers_on_desktop`
 * `osx::finder::show_removable_media_on_desktop`
