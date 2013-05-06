@@ -15,7 +15,7 @@ describe 'osx::recovery_message' do
       should contain_exec('Set OS X Recovery Message NVRAM Variable').with({
         :command => "nvram good-samaritan-message='#{title}'",
         :unless  => "nvram good-samaritan-message | awk -F'\t' '{ print \$2 }' | grep '^#{title}$'",
-        :user    => "root"
+        :user    => 'root'
       })
     end
   end
@@ -32,9 +32,9 @@ describe 'osx::recovery_message' do
       })
 
       should contain_exec('Remove OS X Recovery Message NVRAM Variable').with({
-        :command => "nvram -d good-samaritan-message",
-        :onlyif  => "nvram -p | grep good-samaritan-message",
-        :user    => "root"
+        :command => 'nvram -d good-samaritan-message',
+        :onlyif  => 'nvram -p | grep good-samaritan-message',
+        :user    => 'root'
       })
     end
   end

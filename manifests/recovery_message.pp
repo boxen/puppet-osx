@@ -32,8 +32,8 @@ define osx::recovery_message(
     }
 
     exec { 'Remove OS X Recovery Message NVRAM Variable':
-      command => "nvram -d good-samaritan-message",
-      onlyif  => "nvram -p | grep good-samaritan-message",
+      command => 'nvram -d good-samaritan-message',
+      onlyif  => 'nvram -p | grep good-samaritan-message',
       user    => root
     }
   }
