@@ -15,6 +15,12 @@ define osx::recovery_message(
         key    => 'LoginwindowText',
         value  => $value
       }
+
+      exec { 'Set OS X Recovery Message NVRAM Variable':
+        command => "nvram good-samaritan-message='${value}'",
+        unless  => "nvram good-samaritan-message | awk -F'\t' '{ print \$2 }' | grep '^${value}$'",
+        user    => root
+      }
     } else {
       fail('Cannot set an OS X recovery message without a value')
     }
@@ -23,6 +29,12 @@ define osx::recovery_message(
       ensure => absent,
       path   => '/Library/Preferences/com.apple.loginwindow.plist',
       key    => 'LoginwindowText'
+    }
+
+    exec { 'Remove OS X Recovery Message NVRAM Variable':
+      command => "nvram -d good-samaritan-message",
+      onlyif  => "nvram -p | grep good-samaritan-message",
+      user    => root
     }
   }
 }
