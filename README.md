@@ -1,5 +1,7 @@
 # OSX Defaults Module for Puppet
 
+[![Build Status](https://travis-ci.org/boxen/puppet-osx.png?branch=master)](https://travis-ci.org/boxen/puppet-osx)
+
 Provides classes for setting various defaults in Mac OS X. Also provides a means
 to set a "recovery message" to be displayed on the login and lock screens.
 
@@ -35,7 +37,7 @@ Just `include` any of these in your manifest.
 
 ### Finder Settings
 
-* `osx::finder::show_external_drives_on_desktop`
+* `osx::finder::show_external_hard_drives_on_desktop`
 * `osx::finder::show_hard_drives_on_desktop`
 * `osx::finder::show_mounted_servers_on_desktop`
 * `osx::finder::show_removable_media_on_desktop`
