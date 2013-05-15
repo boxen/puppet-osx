@@ -66,10 +66,12 @@ These settings can be used like one-shots or customized.
   repeating
 
 ```puppet
+# Set the default value (35)
 include osx::global::key_repeat_delay
 
+# ... or set your own
 class { 'osx::global::key_repeat_delay':
-  delay => 35
+  delay => 10
 }
 ```
 
@@ -77,20 +79,24 @@ class { 'osx::global::key_repeat_delay':
   'presses'
 
 ```puppet
+# Set the default value (0)
 include osx::global::key_repeat_rate
 
+# ... or set your own
 class { 'osx::global::key_repeat_rate':
-  rate => 0
+  rate => 2
 }
 ```
 
 `osx::universal_access::cursor_size` - the amount the cursor will be zoomed
 
 ```puppet
+# Set the default value (1.5)
 include osx::universal_access::cursor_size
 
+# ... or set your own
 class { 'osx::universal_access::cursor_size':
-  zoom => 1.5
+  zoom => 2
 }
 ```
 
