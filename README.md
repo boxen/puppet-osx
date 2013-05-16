@@ -34,7 +34,6 @@ Just `include` any of these in your manifest.
 * `osx::dock::dim_hidden_apps` - dims icons of hidden apps
 * `osx::dock::hide_indicator_lights` - remove the indicator lights below running
   apps
-* `osx::dock::icon_size` - sets icons size
 
 ### Finder Settings
 
@@ -101,7 +100,7 @@ class { 'osx::universal_access::cursor_size':
 }
 ```
 
-`osx::dock::icon_size` - the size of the dock icons
+`osx::dock::icon_size` - the size of the dock icons, in pixels
 
 ```puppet
 include osx::dock::icon_size
