@@ -91,6 +91,19 @@ class { 'osx::global::key_repeat_rate':
 }
 ```
 
+`osx::global::natural_mouse_scrolling` - enable/disable 'natural' mouse scrolling. *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default value (enabled=true)
+include osx::global::natural_mouse_scrolling
+
+# ... or set your own
+class { 'osx::global::natural_mouse_scrolling':
+  enabled => false
+}
+```
+
+
 `osx::universal_access::cursor_size` - the amount the cursor will be zoomed
 
 ```puppet
