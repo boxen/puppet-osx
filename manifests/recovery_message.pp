@@ -13,9 +13,9 @@ define osx::recovery_message(
   # The recovery message cannot contain an apostrophe (') because we're passing
   # it into a single-quoted exec. If it does contain an apostrophe, fail and
   # alert the user
-  if "'" in $value {
-    fail("Your osx::recovery_message declaration contains an apostrophe ('),",
-         "which will cause the exec used to set the message to fail. Please",
+  if '\'' in $value {
+    fail('Your osx::recovery_message declaration contains an apostrophe (\'),',
+         'which will cause the exec used to set the message to fail. Please',
          "remove the apostrophe and try again. Your message: \"${value}\"")
   }
 
