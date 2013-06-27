@@ -58,4 +58,15 @@ describe 'osx::recovery_message' do
       })
     end
   end
+
+  context 'Given a value with an apostrophe' do
+    let(:title) { "Jack's message with an apostrophe" }
+    let(:error) { "Your osx::recovery_message declaration contains an apostrophe" }
+
+    it do
+      expect {
+        should contain_exec('Set OS X Recovery Message NVRAM Variable')
+      }.to raise_error(Puppet::Error, /#{error}/)
+    end
+  end
 end
