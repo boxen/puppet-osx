@@ -1,4 +1,4 @@
-# Public: Install updates from Apple 
+# Public: Install updates from Apple
 class osx::software_update {
   exec {
     'OSX Software Update':
