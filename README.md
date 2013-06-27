@@ -58,6 +58,7 @@ Just `include` any of these in your manifest.
 * `osx::disable_app_quarantine` - disable the downloaded app quarantine
 * `osx::no_network_dsstores` - disable creation of .DS_Store files on network
   shares
+* `osx::software_update` - download and install software updates
 
 ## Customizable Settings
 
