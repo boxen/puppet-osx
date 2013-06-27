@@ -15,8 +15,8 @@ define osx::recovery_message(
   # alert the user
   if '\'' in $value {
     fail('Your osx::recovery_message declaration contains an apostrophe (\'),',
-         'which will cause the exec used to set the message to fail. Please',
-         "remove the apostrophe and try again. Your message: \"${value}\"")
+      'which will cause the exec used to set the message to fail. Please',
+      "remove the apostrophe and try again. Your message: \"${value}\"")
   }
 
   # The CoreStorage kext cache needs to be updated so the recovery message
