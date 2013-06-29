@@ -25,6 +25,7 @@ Just `include` any of these in your manifest.
   navigating controls in dialogs
 * `osx::global::expand_print_dialog` - expand the print dialog by default
 * `osx::global::expand_save_dialog` - expand the save dialog by default
+* `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
 
 ### Dock Settings
 
