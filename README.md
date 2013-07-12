@@ -26,6 +26,7 @@ Just `include` any of these in your manifest.
 * `osx::global::expand_print_dialog` - expand the print dialog by default
 * `osx::global::expand_save_dialog` - expand the save dialog by default
 * `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
+* `osx::global::disable_autocorrect` - disables spelling autocorrection
 
 ### Dock Settings
 
