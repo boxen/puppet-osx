@@ -10,6 +10,15 @@ define osx::recovery_message(
   $kextdir     = '/System/Library/Extensions'
   $eficachedir = '/System/Library/Caches/com.apple.corestorage/EFILoginLocalizations'
 
+  # The recovery message cannot contain an apostrophe (') because we're passing
+  # it into a single-quoted exec. If it does contain an apostrophe, fail and
+  # alert the user
+  if '\'' in $value {
+    fail('Your osx::recovery_message declaration contains an apostrophe (\'),',
+      'which will cause the exec used to set the message to fail. Please',
+      "remove the apostrophe and try again. Your message: \"${value}\"")
+  }
+
   # The CoreStorage kext cache needs to be updated so the recovery message
   # is displayed on the FDE pre-boot screen.
   #
