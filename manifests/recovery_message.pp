@@ -40,9 +40,9 @@ define osx::recovery_message(
 
   if $ensure == 'present' {
     if $value != undef {
-      property_list_key { 'Set OS X Recovery Message':
+      boxen::osx_defaults { 'Set OS X Recovery Message':
         ensure => present,
-        path   => '/Library/Preferences/com.apple.loginwindow.plist',
+        domain => '/Library/Preferences/com.apple.loginwindow.plist',
         key    => 'LoginwindowText',
         value  => $value,
         notify => [
@@ -60,9 +60,9 @@ define osx::recovery_message(
       fail('Cannot set an OS X recovery message without a value')
     }
   } else {
-    property_list_key { 'Remove OS X Recovery Message':
+    boxen::osx_defaults { 'Remove OS X Recovery Message':
       ensure => absent,
-      path   => '/Library/Preferences/com.apple.loginwindow.plist',
+      domain => '/Library/Preferences/com.apple.loginwindow.plist',
       key    => 'LoginwindowText',
       notify => [
         Exec['Refresh system kext cache'],

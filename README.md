@@ -130,7 +130,6 @@ class { 'osx::dock::icon_size':
 ## Required Puppet Modules
 
 * boxen
-* property_list_key
 
 ## Developing
 
