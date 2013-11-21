@@ -14,7 +14,7 @@
 class osx::dock::position($position = 'right') {
   include osx::dock
 
-  boxen::osx_defaults { 'orientation':
+  boxen::osx_defaults { 'position':
     domain => 'com.apple.dock',
     key    => 'orientation',
     type   => 'string',
