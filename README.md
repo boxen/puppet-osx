@@ -40,14 +40,14 @@ Just `include` any of these in your manifest.
 
 ### Finder Settings
 
-* `osx::finder::empty_trash_securely` - enable Secure Empty Trash
-* `osx::finder::show_all_on_desktop` - does all of the above
 * `osx::finder::show_external_hard_drives_on_desktop`
 * `osx::finder::show_hard_drives_on_desktop`
-* `osx::finder::show_hidden_files`
 * `osx::finder::show_mounted_servers_on_desktop`
 * `osx::finder::show_removable_media_on_desktop`
+* `osx::finder::empty_trash_securely` - enable Secure Empty Trash
+* `osx::finder::show_all_on_desktop` - does all of the above
 * `osx::finder::unhide_library` - unsets the hidden flag on ~/Library
+* `osx::finder::show_hidden_files`
 
 ### Universal Access Settings
 
