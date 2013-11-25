@@ -124,6 +124,7 @@ class { 'osx::universal_access::cursor_size':
 # Set the default value (36)
 include osx::dock::icon_size
 
+# ... or set your own
 class { 'osx::dock::icon_size':
   size => 36
 }
