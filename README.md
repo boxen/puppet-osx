@@ -47,6 +47,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::show_all_on_desktop` - does all of the above
 * `osx::finder::empty_trash_securely` - enable Secure Empty Trash
 * `osx::finder::unhide_library` - unsets the hidden flag on ~/Library
+* `osx::finder::show_hidden_files`
 
 ### Universal Access Settings
 
@@ -124,7 +125,7 @@ class { 'osx::universal_access::cursor_size':
 include osx::dock::icon_size
 
 # ... or set your own
-class { 'osx::dock::icon_size': 
+class { 'osx::dock::icon_size':
   size => 36
 }
 ```
@@ -136,7 +137,7 @@ class { 'osx::dock::icon_size':
 include osx::dock::position
 
 # ... or set your own
-class { 'osx::dock::position': 
+class { 'osx::dock::position':
   position => 'right'
 }
 ```
@@ -148,7 +149,7 @@ class { 'osx::dock::position':
 include osx::dock::pin_position
 
 # ... or set your own
-class { 'osx::dock::pin_position': 
+class { 'osx::dock::pin_position':
   size => 36
 }
 ```
