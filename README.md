@@ -121,6 +121,7 @@ class { 'osx::universal_access::cursor_size':
 `osx::dock::icon_size` - the size of the dock icons, in pixels
 
 ```puppet
+# Set the default value (36)
 include osx::dock::icon_size
 
 class { 'osx::dock::icon_size':
@@ -128,10 +129,33 @@ class { 'osx::dock::icon_size':
 }
 ```
 
+`osx::dock::position` - the location of the dock on the screen ('right', 'left', 'top', 'bottom')
+
+```puppet
+# Set the default value ('right')
+include osx::dock::position
+
+# ... or set your own
+class { 'osx::dock::position':
+  position => 'right'
+}
+```
+
+`osx::dock::pin_position` - the location to pin the dock to ('start', 'middle', 'end')
+
+```puppet
+# Set the default value ('start')
+include osx::dock::pin_position
+
+# ... or set your own
+class { 'osx::dock::pin_position':
+  size => 36
+}
+```
+
 ## Required Puppet Modules
 
 * boxen
-* property_list_key
 
 ## Developing
 

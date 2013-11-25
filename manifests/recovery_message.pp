@@ -10,6 +10,15 @@ define osx::recovery_message(
   $kextdir     = '/System/Library/Extensions'
   $eficachedir = '/System/Library/Caches/com.apple.corestorage/EFILoginLocalizations'
 
+  # The recovery message cannot contain an apostrophe (') because we're passing
+  # it into a single-quoted exec. If it does contain an apostrophe, fail and
+  # alert the user
+  if '\'' in $value {
+    fail('Your osx::recovery_message declaration contains an apostrophe (\'),',
+      'which will cause the exec used to set the message to fail. Please',
+      "remove the apostrophe and try again. Your message: \"${value}\"")
+  }
+
   # The CoreStorage kext cache needs to be updated so the recovery message
   # is displayed on the FDE pre-boot screen.
   #
@@ -31,9 +40,9 @@ define osx::recovery_message(
 
   if $ensure == 'present' {
     if $value != undef {
-      property_list_key { 'Set OS X Recovery Message':
+      boxen::osx_defaults { 'Set OS X Recovery Message':
         ensure => present,
-        path   => '/Library/Preferences/com.apple.loginwindow.plist',
+        domain => '/Library/Preferences/com.apple.loginwindow.plist',
         key    => 'LoginwindowText',
         value  => $value,
         notify => [
@@ -51,9 +60,9 @@ define osx::recovery_message(
       fail('Cannot set an OS X recovery message without a value')
     }
   } else {
-    property_list_key { 'Remove OS X Recovery Message':
+    boxen::osx_defaults { 'Remove OS X Recovery Message':
       ensure => absent,
-      path   => '/Library/Preferences/com.apple.loginwindow.plist',
+      domain => '/Library/Preferences/com.apple.loginwindow.plist',
       key    => 'LoginwindowText',
       notify => [
         Exec['Refresh system kext cache'],

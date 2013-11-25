@@ -25,9 +25,9 @@ describe 'osx::recovery_message' do
     let(:title) { 'If this Mac is found, please call 123-123-1234' }
 
     it do
-      should contain_property_list_key('Set OS X Recovery Message').with({
+      should contain_boxen__osx_defaults('Set OS X Recovery Message').with({
         :ensure => 'present',
-        :path   => '/Library/Preferences/com.apple.loginwindow.plist',
+        :domain => '/Library/Preferences/com.apple.loginwindow.plist',
         :key    => 'LoginwindowText',
         :value  => title
       })
@@ -45,9 +45,9 @@ describe 'osx::recovery_message' do
     let(:params) { {:ensure => 'absent'} }
 
     it do
-      should contain_property_list_key('Remove OS X Recovery Message').with({
+      should contain_boxen__osx_defaults('Remove OS X Recovery Message').with({
         :ensure => 'absent',
-        :path   => '/Library/Preferences/com.apple.loginwindow.plist',
+        :domain => '/Library/Preferences/com.apple.loginwindow.plist',
         :key    => 'LoginwindowText',
       })
 
@@ -56,6 +56,17 @@ describe 'osx::recovery_message' do
         :onlyif  => 'nvram -p | grep good-samaritan-message',
         :user    => 'root'
       })
+    end
+  end
+
+  context 'Given a value with an apostrophe' do
+    let(:title) { "Jack's message with an apostrophe" }
+    let(:error) { "Your osx::recovery_message declaration contains an apostrophe" }
+
+    it do
+      expect {
+        should contain_exec('Set OS X Recovery Message NVRAM Variable')
+      }.to raise_error(Puppet::Error, /#{error}/)
     end
   end
 end
