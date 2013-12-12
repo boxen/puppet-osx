@@ -48,6 +48,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::empty_trash_securely` - enable Secure Empty Trash
 * `osx::finder::unhide_library` - unsets the hidden flag on ~/Library
 * `osx::finder::show_hidden_files`
+* `osx::finder::enable_quicklook_text_selection`
 
 ### Universal Access Settings
 
