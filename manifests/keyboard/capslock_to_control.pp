@@ -11,6 +11,6 @@ class osx::keyboard::capslock_to_control {
   $remap = 'xargs -I{} defaults -currentHost write -g "com.apple.keyboard.modifiermapping.{}-0" -array "<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>"'
   exec { 'Remap capslock to control on all keyboards':
     command => "${keyboard_ids} | ${remap}",
-    unless => "${keyboard_ids} | ${check}"
+    unless  => "${keyboard_ids} | ${check}"
   }
 }
