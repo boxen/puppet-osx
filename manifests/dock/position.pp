@@ -1,6 +1,6 @@
 # Public: Sets the dock position
 #
-# position - 'bottom', 'top', 'right',left'
+# position - 'bottom', 'top', 'right', 'left'
 #
 # Examples
 #
