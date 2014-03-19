@@ -13,6 +13,7 @@ describe 'osx::global::key_repeat_delay' do
     it 'allows you to pass a delay value' do
       should contain_boxen__osx_defaults('key repeat delay').with({
         :domain => 'NSGlobalDomain',
+        :type   => 'int',
         :key    => 'InitialKeyRepeat',
         :value  => params[:delay],
         :user   => facts[:boxen_user]
