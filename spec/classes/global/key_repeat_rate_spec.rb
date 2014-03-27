@@ -13,6 +13,7 @@ describe 'osx::global::key_repeat_rate' do
     it 'allows you to pass a rate value' do
       should contain_boxen__osx_defaults('key repeat rate').with({
         :domain => 'NSGlobalDomain',
+        :type   => 'int',
         :key    => 'KeyRepeat',
         :value  => params[:rate],
         :user   => facts[:boxen_user]
