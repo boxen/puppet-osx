@@ -63,6 +63,7 @@ Just `include` any of these in your manifest.
 * `osx::no_network_dsstores` - disable creation of .DS_Store files on network
   shares
 * `osx::software_update` - download and install software updates
+* `osx::keyboard::capslock_to_control` - remaps capslock to control on attached keyboards
 
 ## Customizable Settings
 
