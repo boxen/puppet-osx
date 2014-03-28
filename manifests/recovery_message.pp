@@ -53,7 +53,7 @@ define osx::recovery_message(
 
       exec { 'Set OS X Recovery Message NVRAM Variable':
         command => "nvram good-samaritan-message='${value}'",
-        unless  => "nvram good-samaritan-message | awk -F'\t' '{ print \$2 }' | grep '^${value}$'",
+        unless  => "nvram good-samaritan-message | cut -c24- | grep '^${value}$'",
         user    => root
       }
     } else {
