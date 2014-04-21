@@ -24,7 +24,7 @@ class osx::dock::magnification ($magnification = true, $magnification_size = '12
     domain => 'com.apple.dock',
     key    => 'magnification',
     type   => 'bool',
-    value  => '$magnification',
+    value  => $magnification,
     user   => $::boxen_user,
     notify => Exec['killall Dock'];
   }
