@@ -17,7 +17,7 @@
 #
 
 
-class osx::dock::magnification ($magnification = 'true', $magnification_size = '128'){
+class osx::dock::magnification ($magnification = true, $magnification_size = '128'){
   include osx::dock
 
   boxen::osx_defaults { 'magnification':
