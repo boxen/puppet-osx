@@ -1,4 +1,4 @@
-# Public: Sets dock icon magnification 
+# Public: Sets dock icon magnification
 #
 # Examples
 #
