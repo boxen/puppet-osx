@@ -1,17 +1,14 @@
-# Public: Sets the dock magnification
-#
-# magnification - 'yes' 'no'
-# magnification_size 16-128
+# Public: Sets dock icon magnification 
 #
 # Examples
 #
-#   # Set magnification to true, with large icons at 128px
+#   # Set dock icon magnification to true, with 128px magnified icons
 #   include osx::dock::magnification
 #
-#   # ...or set it to customize it!
+#   # ...or manage the icon size yourself!
 #   class { 'osx::dock::magnification':
-#     magnification => 'true|false'
-#     magnification_size => 16-128
+#     magnification => [true|false]
+#     magnification_size => [16-128]
 #   }
 #
 #
