@@ -156,6 +156,18 @@ class { 'osx::dock::pin_position':
 }
 ```
 
+`osx::sound::interface_sound_effects` - enable interface sound effects (true, false)
+
+```puppet
+# Set the default value (true)
+include osx::sound::interface_sound_effects
+
+# ... or set your own
+class { 'osx::sound::interface_sound_effects':
+  enable => false
+}
+```
+
 ## Required Puppet Modules
 
 * boxen
