@@ -23,6 +23,8 @@ Just `include` any of these in your manifest.
   accented character entry
 * `osx::global::enable_keyboard_control_access` - enables the keyboard for
   navigating controls in dialogs
+* `osx::global::enable_standard_function_keys` - enables the F1, F2, etc.
+  keys to be treated as standard function keys
 * `osx::global::expand_print_dialog` - expand the print dialog by default
 * `osx::global::expand_save_dialog` - expand the save dialog by default
 * `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
