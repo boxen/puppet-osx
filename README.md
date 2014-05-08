@@ -23,6 +23,8 @@ Just `include` any of these in your manifest.
   accented character entry
 * `osx::global::enable_keyboard_control_access` - enables the keyboard for
   navigating controls in dialogs
+* `osx::global::enable_standard_function_keys` - enables the F1, F2, etc.
+  keys to be treated as standard function keys
 * `osx::global::expand_print_dialog` - expand the print dialog by default
 * `osx::global::expand_save_dialog` - expand the save dialog by default
 * `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
@@ -48,6 +50,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::empty_trash_securely` - enable Secure Empty Trash
 * `osx::finder::unhide_library` - unsets the hidden flag on ~/Library
 * `osx::finder::show_hidden_files`
+* `osx::finder::enable_quicklook_text_selection`
 
 ### Universal Access Settings
 
@@ -62,6 +65,7 @@ Just `include` any of these in your manifest.
 * `osx::no_network_dsstores` - disable creation of .DS_Store files on network
   shares
 * `osx::software_update` - download and install software updates
+* `osx::keyboard::capslock_to_control` - remaps capslock to control on attached keyboards
 
 ## Customizable Settings
 
@@ -154,6 +158,18 @@ class { 'osx::dock::pin_position':
 }
 ```
 
+`osx::sound::interface_sound_effects` - enable interface sound effects (true, false)
+
+```puppet
+# Set the default value (true)
+include osx::sound::interface_sound_effects
+
+# ... or set your own
+class { 'osx::sound::interface_sound_effects':
+  enable => false
+}
+```
+
 `osx::mouse::button_mode` - the button mode for multitouch mice (1, 2) *Requires re-login for new settings to initialize.*
 
 ```puppet
@@ -187,8 +203,7 @@ include osx::mouse::swipe_between_pages
 # ... or set your own
 class { 'osx::mouse::swipe_between_pages':
   enabled => true
-}
-```
+
 
 ## Required Puppet Modules
 
