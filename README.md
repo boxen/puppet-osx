@@ -170,6 +170,41 @@ class { 'osx::sound::interface_sound_effects':
 }
 ```
 
+`osx::mouse::button_mode` - the button mode for multitouch mice (1, 2) *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default mode (1)
+include osx::mouse::button_mode
+
+# ... or set your own
+class { 'osx::mouse::button_mode':
+  mode => 2
+}
+```
+
+`osx::mouse::smart_zoom` - enable/disable smart zoom for multitouch mice *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default value (enabled=false)
+include osx::mouse::smart_zoom
+
+# ... or set your own
+class { 'osx::mouse::smart_zoom':
+  enabled => true
+}
+```
+
+`osx::mouse::swipe_between_pages` - enable/disable swipe between pages for multitouch mice *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default value (enabled=false)
+include osx::mouse::swipe_between_pages
+
+# ... or set your own
+class { 'osx::mouse::swipe_between_pages':
+  enabled => true
+
+
 ## Required Puppet Modules
 
 * boxen
