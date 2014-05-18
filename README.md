@@ -203,7 +203,8 @@ include osx::mouse::swipe_between_pages
 # ... or set your own
 class { 'osx::mouse::swipe_between_pages':
   enabled => true
-
+}
+```
 
 ## Required Puppet Modules
 
