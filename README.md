@@ -1,6 +1,6 @@
 # OSX Defaults Module for Puppet
 
-[![Build Status](https://travis-ci.org/boxen/puppet-osx.png?branch=master)](https://travis-ci.org/boxen/puppet-osx)
+[![Build Status](https://travis-ci.org/boxen/puppet-osx.svg?branch=master)](https://travis-ci.org/boxen/puppet-osx)
 
 Provides classes for setting various defaults in Mac OS X. Also provides a means
 to set a "recovery message" to be displayed on the login and lock screens.
@@ -23,6 +23,8 @@ Just `include` any of these in your manifest.
   accented character entry
 * `osx::global::enable_keyboard_control_access` - enables the keyboard for
   navigating controls in dialogs
+* `osx::global::enable_standard_function_keys` - enables the F1, F2, etc.
+  keys to be treated as standard function keys
 * `osx::global::expand_print_dialog` - expand the print dialog by default
 * `osx::global::expand_save_dialog` - expand the save dialog by default
 * `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
@@ -156,9 +158,83 @@ class { 'osx::dock::pin_position':
 }
 ```
 
+`osx::dock::hot_corner` - configure the action for a hot corner
+
+```puppet
+# Make the top left corner display the Dashboard
+osx::dock::hot_corner { 'Top Left':
+  action => 'Dashboard'
+}
+
+# Make the bottom right corner show the desktop
+osx::dock::hot_corner { 'Show the desktop':
+  position => 'Bottom Right',
+  action => 'Desktop'
+}
+```
+
+`osx::dock::hot_corners` - configure the hot corners
+
+```puppet
+# Make the top right corner start the screen saver and the bottom left corner launch Mission Control
+class { 'osx::dock::hot_corners':
+  top_right => "Start Screen Saver",
+  bottom_left => "Mission Control"
+}
+```
+
+`osx::sound::interface_sound_effects` - enable interface sound effects (true, false)
+
+```puppet
+# Set the default value (true)
+include osx::sound::interface_sound_effects
+
+# ... or set your own
+class { 'osx::sound::interface_sound_effects':
+  enable => false
+}
+```
+
+`osx::mouse::button_mode` - the button mode for multitouch mice (1, 2) *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default mode (1)
+include osx::mouse::button_mode
+
+# ... or set your own
+class { 'osx::mouse::button_mode':
+  mode => 2
+}
+```
+
+`osx::mouse::smart_zoom` - enable/disable smart zoom for multitouch mice *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default value (enabled=false)
+include osx::mouse::smart_zoom
+
+# ... or set your own
+class { 'osx::mouse::smart_zoom':
+  enabled => true
+}
+```
+
+`osx::mouse::swipe_between_pages` - enable/disable swipe between pages for multitouch mice *Requires re-login for new settings to initialize.*
+
+```puppet
+# Set the default value (enabled=false)
+include osx::mouse::swipe_between_pages
+
+# ... or set your own
+class { 'osx::mouse::swipe_between_pages':
+  enabled => true
+}
+```
+
 ## Required Puppet Modules
 
 * boxen
+* puppetlabs-stdlib
 
 ## Developing
 
