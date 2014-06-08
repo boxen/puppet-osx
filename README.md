@@ -158,6 +158,31 @@ class { 'osx::dock::pin_position':
 }
 ```
 
+`osx::dock::hot_corner` - configure the action for a hot corner
+
+```puppet
+# Make the top left corner display the Dashboard
+osx::dock::hot_corner { 'Top Left':
+  action => 'Dashboard'
+}
+
+# Make the bottom right corner show the desktop
+osx::dock::hot_corner { 'Show the desktop':
+  position => 'Bottom Right',
+  action => 'Desktop'
+}
+```
+
+`osx::dock::hot_corners` - configure the hot corners
+
+```puppet
+# Make the top right corner start the screen saver and the bottom left corner launch Mission Control
+class { 'osx::dock::hot_corners':
+  top_right => "Start Screen Saver",
+  bottom_left => "Mission Control"
+}
+```
+
 `osx::sound::interface_sound_effects` - enable interface sound effects (true, false)
 
 ```puppet

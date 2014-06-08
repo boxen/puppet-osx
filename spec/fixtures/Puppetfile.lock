@@ -3,6 +3,12 @@ GITHUBTARBALL
   specs:
     boxen (2.0.0)
 
+GITHUBTARBALL
+  remote: puppetlabs/puppetlabs-stdlib
+  specs:
+    puppetlabs-stdlib (4.2.1)
+
 DEPENDENCIES
   boxen (= 2.0.0)
+  puppetlabs-stdlib (= 4.2.1)
 
