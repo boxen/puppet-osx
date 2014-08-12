@@ -29,7 +29,8 @@ describe 'osx::recovery_message' do
         :ensure => 'present',
         :domain => '/Library/Preferences/com.apple.loginwindow.plist',
         :key    => 'LoginwindowText',
-        :value  => title
+        :value  => title,
+        :user   => 'root'
       })
 
       should contain_exec('Set OS X Recovery Message NVRAM Variable').with({
@@ -49,6 +50,7 @@ describe 'osx::recovery_message' do
         :ensure => 'absent',
         :domain => '/Library/Preferences/com.apple.loginwindow.plist',
         :key    => 'LoginwindowText',
+        :user   => 'root'
       })
 
       should contain_exec('Remove OS X Recovery Message NVRAM Variable').with({
