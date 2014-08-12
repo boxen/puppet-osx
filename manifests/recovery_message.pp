@@ -45,6 +45,7 @@ define osx::recovery_message(
         domain => '/Library/Preferences/com.apple.loginwindow.plist',
         key    => 'LoginwindowText',
         value  => $value,
+        user   => 'root',
         notify => [
           Exec['Refresh system kext cache'],
           Exec['Refresh CoreStorage EFI Cache']
@@ -64,6 +65,7 @@ define osx::recovery_message(
       ensure => absent,
       domain => '/Library/Preferences/com.apple.loginwindow.plist',
       key    => 'LoginwindowText',
+      user   => 'root',
       notify => [
         Exec['Refresh system kext cache'],
         Exec['Refresh CoreStorage EFI Cache']
