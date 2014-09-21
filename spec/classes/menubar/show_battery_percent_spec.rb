@@ -5,7 +5,8 @@ describe 'osx::menubar::show_battery_percent do
         :key    => 'ShowPercent',
         :domain => 'com.apple.menuextra.battery',
         :value  => 'YES',
-        :user   => facts[:boxen_user]
+        :user   => facts[:boxen_user],
+        :notify => 'Exec[killall SystemUIServer]'
       })
     end
   end
