@@ -20,4 +20,14 @@ describe 'osx::global::tap_to_click' do
       :user   => facts[:boxen_user]
     })
   end
+
+  it do
+    should contain_boxen__osx_defaults('Tap-To-Click Current Host').with({
+      :key    => 'com.apple.mouse.tapBehavior',
+      :domain => 'NSGlobalDomain',
+      :value  => 1,
+      :user   => facts[:boxen_user],
+      :host   => 'currentHost'
+    })
+  end
 end
