@@ -232,6 +232,19 @@ class { 'osx::mouse::swipe_between_pages':
 }
 ```
 
+`osx::dock::magnification` - size of dock icon magnification
+
+```puppet
+# Set the default value (true, 128)
+include osx::dock::magnification
+
+# ... or set your own
+class { 'osx::dock::magnification':
+  magnification => true,
+  magnification_size => 84
+}
+```
+
 ## Required Puppet Modules
 
 * boxen
