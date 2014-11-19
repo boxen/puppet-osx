@@ -65,6 +65,10 @@ Just `include` any of these in your manifest.
 * `osx::universal_access::enable_scrollwheel_zoom` - enables zoom using the
   scroll wheel
 
+### Safari Settings
+
+* `include osx::safari::enable_developer_mode` - enables developer mode in safari
+
 ### Miscellaneous Settings
 
 * `osx::disable_app_quarantine` - disable the downloaded app quarantine
