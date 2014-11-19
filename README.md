@@ -159,7 +159,7 @@ include osx::dock::pin_position
 
 # ... or set your own
 class { 'osx::dock::pin_position':
-  size => 36
+  position => 'start'
 }
 ```
 
