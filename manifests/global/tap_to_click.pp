@@ -17,4 +17,14 @@ class osx::global::tap_to_click {
     type   => int,
     user   => $::boxen_user;
   }
+
+  boxen::osx_defaults { 'Tap-To-Click Current Host':
+    ensure => present,
+    domain => 'NSGlobalDomain',
+    key    => 'com.apple.mouse.tapBehavior',
+    value  => 1,
+    type   => int,
+    host   => 'currentHost',
+    user   => $::boxen_user;
+  }
 }
