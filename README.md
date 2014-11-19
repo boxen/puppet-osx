@@ -53,6 +53,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::show_hidden_files`
 * `osx::finder::enable_quicklook_text_selection`
 * `osx::finder::show_warning_before_emptying_trash`
+* `osx::finder::show_warning_before_changing_an_extension`
 
 ### Universal Access Settings
 
