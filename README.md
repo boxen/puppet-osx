@@ -54,6 +54,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::enable_quicklook_text_selection`
 * `osx::finder::show_warning_before_emptying_trash`
 * `osx::finder::show_warning_before_changing_an_extension`
+* `osx::finder::show_all_filename_extensions`
 
 ### Universal Access Settings
 
