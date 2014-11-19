@@ -2,7 +2,6 @@
 #
 # Examples
 #
-#   # set the repeat delay to 35 (the default)...
 #   include osx::safari::enable_developer_mode
 #
 class osx::safari::enable_developer_mode {
