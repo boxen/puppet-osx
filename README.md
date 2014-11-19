@@ -37,6 +37,7 @@ Just `include` any of these in your manifest.
 * `osx::dock::autohide` - automatically hide the dock
 * `osx::dock::clear_dock` - ensures the dock only contains apps that are running
 * `osx::dock::disable` - disable the dock by setting a long autohide-delay
+* `osx::dock::disable_dashboard` - disable the dashboard
 * `osx::dock::dim_hidden_apps` - dims icons of hidden apps
 * `osx::dock::hide_indicator_lights` - remove the indicator lights below running
   apps
