@@ -52,6 +52,7 @@ Just `include` any of these in your manifest.
 * `osx::finder::unhide_library` - unsets the hidden flag on ~/Library
 * `osx::finder::show_hidden_files`
 * `osx::finder::enable_quicklook_text_selection`
+* `osx::finder::show_warning_before_emptying_trash`
 
 ### Universal Access Settings
 
