@@ -30,6 +30,7 @@ Just `include` any of these in your manifest.
 * `osx::global::disable_remote_control_ir_receiver` - disable remote control infrared receiver
 * `osx::global::disable_autocorrect` - disables spelling autocorrection
 * `osx::global::tap_to_click` - enables tap to click
+* `osx::global::enable_dark_mode_shortcut` - enables `command + option + control + t` to toggle "dark mode"
 
 ### Dock Settings
 
